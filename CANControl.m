@@ -4,8 +4,8 @@ classdef CANControl < handle
         s;  % serialPort
     end
     properties (Constant)
-        mmperinc = 0.025;   % [µm per increment] constant for converting
-                            %  µm to increments of focus z-position
+        mmperinc = 0.025;   % [Âµm per increment] constant for converting
+                            %  Âµm to increments of focus z-position
     end
 
     methods
@@ -16,7 +16,7 @@ classdef CANControl < handle
         end
 
         %% Destructor
-        function delete (~)
+        function delete (obj)
             fclose(obj.s);
             delete(obj.s);
         end
@@ -24,25 +24,25 @@ classdef CANControl < handle
         %% AxioVert Focus
         % prefix 'FP'
         
-        % function returns current position in µm
+        % function returns current position in Âµm
         function cP = getFocusPosition (obj)
             fprintf(obj.s, 'FPZp');         % request current position
             cP = fscanf(obj.s);             % read answer
             cP = obj.stripPrefix(cP);       % strip prefix
             cP = hex2dec(cP);               % convert hexadezimal to dezimal
-            cP = cP * obj.mmperinc;         % convert to µm
+            cP = cP * obj.mmperinc;         % convert to Âµm
         end
         
-        % function sets position given in µm
+        % function sets position given in Âµm
         function setFocusPosition (obj, pos)
-            nP = pos / obj.mmperinc;        % convert µm to increments
+            nP = pos / obj.mmperinc;        % convert Âµm to increments
             nP = dec2hex(round(nP));        % round and convert to hexadecimal
             fprintf(obj.s, ['FPZD' nP]);    % set current position
         end
         
         % function sets the scan velocity
         function setFocusVelocity (obj, vel)
-            % for security limited to ~30 µm/s
+            % for security limited to ~30 Âµm/s
             vel = abs(vel);
             if (vel > 20000)
                 vel = 20000;
