@@ -4,8 +4,9 @@ classdef CANControl < handle
         s;  % serialPort
     end
     properties (Constant)
-        mmperinc = 0.025;   % [Âµm per increment] constant for converting
-                            %  Âµm to increments of focus z-position
+        mmperinc = 0.025;   % [µm per increment] constant for converting
+                            %  µm to increments of focus z-position
+        rangeFocus = hex2dec('FFFFFF'); % number of increments of focus
     end
 
     methods
@@ -30,19 +31,21 @@ classdef CANControl < handle
             cP = fscanf(obj.s);             % read answer
             cP = obj.stripPrefix(cP);       % strip prefix
             cP = hex2dec(cP);               % convert hexadezimal to dezimal
-            cP = cP * obj.mmperinc;         % convert to Âµm
+            cP = cP * obj.mmperinc;         % convert to µm
         end
         
         % function sets position given in Âµm
         function setFocusPosition (obj, pos)
-            nP = pos / obj.mmperinc;        % convert Âµm to increments
+            nP = pos / obj.mmperinc;        % convert µm to increments
+            nP = mod(nP, obj.rangeFocus);   % calculate modulus (the zero-position is always set at microscope boot;
+                                            % hence negative positions are adressed calculating the modulus
             nP = dec2hex(round(nP));        % round and convert to hexadecimal
             fprintf(obj.s, ['FPZD' nP]);    % set current position
         end
         
         % function sets the scan velocity
         function setFocusVelocity (obj, vel)
-            % for security limited to ~30 Âµm/s
+            % for security limited to ~30 µm/s
             vel = abs(vel);
             if (vel > 20000)
                 vel = 20000;
