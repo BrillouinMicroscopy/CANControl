@@ -32,7 +32,7 @@ This device controls the laser scanning module and is adressed using the prefix 
 
 Commands:
 - ```IPCr6,1```		Get the position of the main beam splitter (HT). Returns ```PIxxx``` with ```xxx`` as the position of HT.
-- ```IPCR6,x```		Set the position of HT. The value ```x``` is the desired position with values ```[25, 31, 37, 43, 1, 7, 13, 19]``` corresponding to the positions ```[1, 2, 3, 4, 5, 6, 7, 8]``` of HT.
+- ```IPCR6,x```		Set the position of HT. The value ```x``` is the desired position with values ```[25, 19, 13, 7, 1, 43, 37, 31]``` corresponding to the positions ```[1, 2, 3, 4, 5, 6, 7, 8]``` of HT.
 - ```IPCr7,1```		Get the position of the secondary beam splitter 1 (NT1). Returns ```PIxxx``` with ```xxx`` as the position of NT1.
 - ```IPCR7,x```		Set the position of NT1. The value ```x``` is the desired position with values ```[25, 19, 13, 7, 1, 43, 37, 31]``` corresponding to the positions ```[1, 2, 3, 4, 5, 6, 7, 8]``` of NT1.
 - ```IPCr8,1```		Get the position of the secondary beam splitter 2 (NT2). Returns ```PIxxx``` with ```xxx`` as the position of NT2.
