@@ -1,13 +1,9 @@
-classdef Laser < com
+classdef init < com & Stand.config
 %Lsm controls the laser scanning module (pinholes, filters, beamsplitters,
-%collimators)
-    properties
-        prefix = 'J';      % prefix for adressing with the device
-    end
-    
+%collimators)    
     methods
         %% Constructor
-        function obj = Laser(serial)
+        function obj = init(serial)
             obj@com(serial);
         end
         

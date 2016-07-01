@@ -18,13 +18,13 @@ classdef CANControl < handle
         function obj = CANControl(Port,BaudRate)
             obj.s=serial(Port,'Terminator','CR','BaudRate',BaudRate);
             fopen(obj.s);
-            obj.focus = Focus(obj.s);
-            obj.scanHead = ScanHead(obj.s);
-            obj.stand = Stand(obj.s);
-            obj.meta = Meta(obj.s);
-            obj.mcu = Mcu(obj.s);
-            obj.laser = Laser(obj.s);
-            obj.pmt = Pmt(obj.s);
+            obj.focus       = Focus.init(obj.s);
+            obj.scanHead    = ScanHead.init(obj.s);
+            obj.stand       = Stand.init(obj.s);
+            obj.meta        = Meta.init(obj.s);
+            obj.mcu         = Mcu.init(obj.s);
+            obj.laser       = Laser.init(obj.s);
+            obj.pmt         = Pmt.init(obj.s);
         end
 
         %% Destructor

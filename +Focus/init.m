@@ -1,26 +1,24 @@
-classdef Focus < com
-%Focus controls the position of the objective lens of the AxioVert 200M
-    properties
-        prefix = 'F';      % prefix for adressing with the device
-    end
+classdef init < com & Focus.config
+%Focus.init controls the Stand Axiovert 200:Focus
     properties (Constant)
         mmperinc = 0.025;   % [µm per increment] constant for converting
                             %  µm to increments of focus z-position
         rangeFocus = hex2dec('FFFFFF'); % number of increments of focus
     end
     properties (Dependent)
+        z;
         velocity;
     end
     
     methods
         %% Constructor
-        function obj = Focus(serial)
+        function obj = init(serial)
             obj@com(serial); 
         end
         
         %% Available methods 
         % function returns current position in µm
-        function cP = get (obj)
+        function cP = get.z (obj)
             obj.send('Zp');                 % request current position
             cP = obj.receive();
             cP = hex2dec(cP);               % convert hexadezimal to dezimal
@@ -28,7 +26,7 @@ classdef Focus < com
         end
         
         % function sets position given in µm
-        function set (obj, pos)
+        function set.z (obj, pos)
             nP = pos / obj.mmperinc;        % convert µm to increments
             nP = mod(nP, obj.rangeFocus);   % calculate modulus (the zero-position is always set at microscope boot;
                                             % hence negative positions are adressed calculating the modulus
