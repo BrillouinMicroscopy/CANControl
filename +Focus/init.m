@@ -59,5 +59,27 @@ classdef init < com & Focus.config
         function scanStop (obj)
             obj.send('ZSS');        % stop the scan
         end
+        
+        % function returns the current scan status
+        function stat = scanStatus (obj)
+            obj.send('Zt');         % scan status
+            stat = obj.receive();
+        end
+        
+        % function returns the key of the current position
+        function key = statusKey (obj)
+            obj.send('Zw');         % status key
+            key = obj.receive();
+        end
+        
+        % function moves the focus to the load position
+        function move2Load (obj)
+            obj.send('ZW0');        % load position
+        end
+        
+        % function moves the focus to the work position
+        function move2Work (obj)
+            obj.send('ZW1');        % work position
+        end
     end
 end

@@ -21,7 +21,10 @@ Commands:
 - ```FPZS+```	Start a scan in positive direction.
 - ```FPZSS```	Stop the scan.
 - ```FPZDxxxxxx```	Set the current position with ```xxxxxx``` as the desired position in hexadecimal units. One increment corresponds to 0.025 µm.
-- ```FPZp```	State of scanner. ```0``` corresponds to static focus, ```255``` means moving lens.
+- ```FPZt```	State of scanner. ```0``` corresponds to static focus, ```255``` means moving lens.
+- ```FPw```		Status key of the current position. ```01``` corresponds to the work position, ```04``` means load position.
+- ```FPW0```	Moves the focus to the load position.
+- ```FPW1```	Moves the focus to the work position.
 
 ### LSM 510:Scanhead 
 
