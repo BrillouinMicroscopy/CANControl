@@ -1,7 +1,7 @@
 classdef init < com & Focus.config
 %Focus.init controls the Stand Axiovert 200:Focus
     properties (Constant)
-        mmperinc = 0.025;   % [µm per increment] constant for converting
+        umperinc = 0.025;   % [µm per increment] constant for converting
                             %  µm to increments of focus z-position
         rangeFocus = hex2dec('FFFFFF'); % number of increments of focus
     end
@@ -22,16 +22,17 @@ classdef init < com & Focus.config
             obj.send('Zp');                 % request current position
             cP = obj.receive();
             cP = hex2dec(cP);               % convert hexadezimal to dezimal
-            cP = cP * obj.mmperinc;         % convert to µm
+            cP = cP * obj.umperinc;         % convert to µm
         end
         
         % function sets position given in µm
         function set.z (obj, pos)
-            nP = pos / obj.mmperinc;        % convert µm to increments
+            nP = pos / obj.umperinc;        % convert µm to increments
             nP = mod(nP, obj.rangeFocus);   % calculate modulus (the zero-position is always set at microscope boot;
                                             % hence negative positions are adressed calculating the modulus
             nP = dec2hex(round(nP), 6);     % round and convert to hexadecimal
             obj.send(['ZD' nP]);            % set current position
+            obj.receive();
         end
         
         % function sets the scan velocity
