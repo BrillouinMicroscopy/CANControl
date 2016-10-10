@@ -104,3 +104,21 @@ This device controls the META detector and is adressed using the prefix ```C```.
 Commands:
 - ```CPCs26,1```	Get the position of the grating 1 (GS1). Returns ```PCxxx``` with ```xxx``` as the position of GS1.
 - ```CPCS26,x```	Set the position of GS1. The value ```x``` is the desired position with values from ```1``` to ```600```.
+
+### Stage 28:MCU 28
+
+This device controls the x- and y-position of the translation stage and is adressed using the prefix ```N```.
+
+Commands:
+- ```NPXp```		Get the x-position. Returns ```PNxxxxxx``` with ```xxxxxx``` as the x-position of the stage.
+- ```NPYp```		Get the y-position. Returns ```PNxxxxxx``` with ```xxxxxx``` as the y-position of the stage.
+- ```NPXS```		Stops the movement of the x-axis.
+- ```NPYS```		Stops the movement of the y-axis.
+- ```NPXVx```		Sets the velocity of the x-axis to the decimal value ```x```. A value of 1 corresponds to a velocity of approximately 500 µm per second.
+- ```NPYVx```		Sets the velocity of the y-axis to the decimal value ```x```. A value of 1 corresponds to a velocity of approximately 500 µm per second.
+- ```NPXt```		State of x-axis. ```0``` corresponds to a static stage, ```255``` means moving stage.
+- ```NPYt```		State of y-axis. ```0``` corresponds to a static stage, ```255``` means moving stage.
+- ```NPXmx```		Purpose unknown. Accepts value from 0 to 9 for ```x```, returns either 0 or 1.
+- ```NPYmx```		Purpose unknown. Accepts value from 0 to 9 for ```x```, returns either 0 or 1.
+- ```NPXTxxxxxx```	Set the x-position of the stage. value ```xxxxxx``
+- ```NPYTxxxxxx```	Set the y-position of the stage. 	value ```xxxxxx``
