@@ -32,17 +32,17 @@ This device controls the objective, reflector, sideport etc. of the AxioVert 200
 
 Commands:
 - ```HPCR1,x```		Set the position of the Reflector. The value ```x``` is the desired position with values ```[1, 2, 3, 4, 5]```.
-- ```HPCr1,1```		Get the position of the Reflector.  Returns ```PHx``` with ```x`` as the position of the Reflector.
+- ```HPCr1,1```		Get the position of the Reflector.  Returns ```PHx``` with ```x``` as the position of the Reflector.
 - ```HPCR2,x```		Set the position of the Objective. The value ```x``` is the desired position with values ```[1, 2, 3, 4, 5, 6]```.
-- ```HPCr2,1```		Get the position of the Objective.  Returns ```PHx``` with ```x`` as the position of the Objective.
+- ```HPCr2,1```		Get the position of the Objective.  Returns ```PHx``` with ```x``` as the position of the Objective.
 - ```HPCR36,x```	Set the position of the Tubelens. The value ```x``` is the desired position with values ```[1, 2, 3]```.
-- ```HPCr36,1```	Get the position of the Tubelens.  Returns ```PHx``` with ```x`` as the position of the Tubelens.
+- ```HPCr36,1```	Get the position of the Tubelens.  Returns ```PHx``` with ```x``` as the position of the Tubelens.
 - ```HPCR38,x```	Set the position of the Baseport. The value ```x``` is the desired position with values ```[1, 2, 3]```.
-- ```HPCr38,1```	Get the position of the Baseport.  Returns ```PHx``` with ```x`` as the position of the Baseport.
+- ```HPCr38,1```	Get the position of the Baseport.  Returns ```PHx``` with ```x``` as the position of the Baseport.
 - ```HPCR39,x```	Set the position of the Sideport. The value ```x``` is the desired position with values ```[1, 2, 3]```.
-- ```HPCr39,1```	Get the position of the Sideport.  Returns ```PHx``` with ```x`` as the position of the Sideport.
+- ```HPCr39,1```	Get the position of the Sideport.  Returns ```PHx``` with ```x``` as the position of the Sideport.
 - ```HPCR51,x```	Set the position of the Mirror. The value ```x``` is the desired position with values ```[1, 2]```.
-- ```HPCr51,1```	Get the position of the Mirror.  Returns ```PHx``` with ```x`` as the position of the Mirror.
+- ```HPCr51,1```	Get the position of the Mirror.  Returns ```PHx``` with ```x``` as the position of the Mirror.
 
 There are more commands which are not necessary for the Axiovert 200M in Room 340.
 
