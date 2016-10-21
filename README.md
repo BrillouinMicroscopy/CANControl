@@ -26,6 +26,26 @@ Commands:
 - ```FPW0```	Moves the focus to the load position.
 - ```FPW1```	Moves the focus to the work position.
 
+### Stand Axiovert 200:Stand
+
+This device controls the objective, reflector, sideport etc. of the AxioVert 200M and is adressed using the prefix ```H```. You can set the positions of the devices.
+
+Commands:
+- ```HPCR1,x```		Set the position of the Reflector. The value ```x``` is the desired position with values ```[1, 2, 3, 4, 5]```.
+- ```HPCr1,1```		Get the position of the Reflector.  Returns ```PHx``` with ```x`` as the position of the Reflector.
+- ```HPCR2,x```		Set the position of the Objective. The value ```x``` is the desired position with values ```[1, 2, 3, 4, 5, 6]```.
+- ```HPCr2,1```		Get the position of the Objective.  Returns ```PHx``` with ```x`` as the position of the Objective.
+- ```HPCR36,x```	Set the position of the Tubelens. The value ```x``` is the desired position with values ```[1, 2, 3]```.
+- ```HPCr36,1```	Get the position of the Tubelens.  Returns ```PHx``` with ```x`` as the position of the Tubelens.
+- ```HPCR38,x```	Set the position of the Baseport. The value ```x``` is the desired position with values ```[1, 2, 3]```.
+- ```HPCr38,1```	Get the position of the Baseport.  Returns ```PHx``` with ```x`` as the position of the Baseport.
+- ```HPCR39,x```	Set the position of the Sideport. The value ```x``` is the desired position with values ```[1, 2, 3]```.
+- ```HPCr39,1```	Get the position of the Sideport.  Returns ```PHx``` with ```x`` as the position of the Sideport.
+- ```HPCR51,x```	Set the position of the Mirror. The value ```x``` is the desired position with values ```[1, 2]```.
+- ```HPCr51,1```	Get the position of the Mirror.  Returns ```PHx``` with ```x`` as the position of the Mirror.
+
+There are more commands which are not necessary for the Axiovert 200M in Room 340.
+
 ### LSM 510:Scanhead 
 
 This device controls the laser scanning module and is adressed using the prefix ```I```. You can control beam splitters, collimators, filters and pinholes.

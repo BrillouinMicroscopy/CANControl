@@ -16,7 +16,7 @@ classdef init < com & Focus.config
             obj@com(serial); 
         end
         
-        %% Available methods 
+        %% Available methods
         % function returns current position in µm
         function cP = get.z (obj)
             obj.send('Zp');                 % request current position
