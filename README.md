@@ -54,13 +54,13 @@ This device controls the laser scanning module and is adressed using the prefix 
 #### Beam splitters
 
 Commands:
-- ```IPCr6,1```		Get the position of the main beam splitter (HT). Returns ```PIxxx``` with ```xxx`` as the position of HT.
+- ```IPCr6,1```		Get the position of the main beam splitter (HT). Returns ```PIxxx``` with ```xxx``` as the position of HT.
 - ```IPCR6,x```		Set the position of HT. The value ```x``` is the desired position with values ```[25, 19, 13, 7, 1, 43, 37, 31]``` corresponding to the positions ```[1, 2, 3, 4, 5, 6, 7, 8]``` of HT.
 - ```IPCr7,1```		Get the position of the secondary beam splitter 1 (NT1). Returns ```PIxxx``` with ```xxx`` as the position of NT1.
 - ```IPCR7,x```		Set the position of NT1. The value ```x``` is the desired position with values ```[25, 19, 13, 7, 1, 43, 37, 31]``` corresponding to the positions ```[1, 2, 3, 4, 5, 6, 7, 8]``` of NT1.
-- ```IPCr8,1```		Get the position of the secondary beam splitter 2 (NT2). Returns ```PIxxx``` with ```xxx`` as the position of NT2.
+- ```IPCr8,1```		Get the position of the secondary beam splitter 2 (NT2). Returns ```PIxxx``` with ```xxx``` as the position of NT2.
 - ```IPCR8,x```		Set the position of NT2. The value ```x``` is the desired position with values ```[10, 1, 28, 19]``` corresponding to the positions ```[1, 2, 3, 4]``` of NT2.
-- ```IPCr9,1```		Get the position of the secondary beam splitter 3 (NT3). Returns ```PIxxx``` with ```xxx`` as the position of NT3.
+- ```IPCr9,1```		Get the position of the secondary beam splitter 3 (NT3). Returns ```PIxxx``` with ```xxx``` as the position of NT3.
 - ```IPCR9,x```		Set the position of NT3. The value ```x``` is the desired position with values ```[10, 1, 28, 19]``` corresponding to the positions ```[1, 2, 3, 4]``` of NT3.
 
 
@@ -140,5 +140,5 @@ Commands:
 - ```NPYt```		State of y-axis. ```0``` corresponds to a static stage, ```255``` means moving stage.
 - ```NPXmx```		Purpose unknown. Accepts value from 0 to 9 for ```x```, returns either 0 or 1.
 - ```NPYmx```		Purpose unknown. Accepts value from 0 to 9 for ```x```, returns either 0 or 1.
-- ```NPXTxxxxxx```	Set the x-position of the stage. value ```xxxxxx``
-- ```NPYTxxxxxx```	Set the y-position of the stage. 	value ```xxxxxx``
+- ```NPXTxxxxxx```	Set the x-position of the stage. The value ```xxxxxx``` is the desired position.
+- ```NPYTxxxxxx```	Set the y-position of the stage. The value ```xxxxxx``` is the desired position.
