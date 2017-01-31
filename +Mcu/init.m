@@ -1,4 +1,4 @@
-classdef init < com & Mcu.config
+classdef init < BA_Utils.ScanControl.Utils.CANControl.com & BA_Utils.ScanControl.Utils.CANControl.Mcu.config
 %Mcu.init controls the Stage MCU 28:MCU 28
     properties (Constant)
         mmperinc = 0.25;    % [µm per increment] constant for converting
@@ -15,7 +15,7 @@ classdef init < com & Mcu.config
     methods
         %% Constructor
         function obj = init(serial)
-            obj@com(serial);
+            obj@BA_Utils.ScanControl.Utils.CANControl.com(serial);
         end
         
         %% Available methods

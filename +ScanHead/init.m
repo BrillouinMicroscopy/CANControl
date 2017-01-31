@@ -1,4 +1,4 @@
-classdef init < com & ScanHead.config
+classdef init < BA_Utils.ScanControl.Utils.CANControl.com & BA_Utils.ScanControl.Utils.CANControl.ScanHead.config
 %collimator1 controls the z-position of collimator1
     properties (Dependent)
         ht;             % main beam splitter
@@ -15,7 +15,7 @@ classdef init < com & ScanHead.config
     methods
         %% Constructor
         function obj = init(serial)
-            obj@com(serial);
+            obj@BA_Utils.ScanControl.Utils.CANControl.com(serial);
         end
         
         %% Available methods

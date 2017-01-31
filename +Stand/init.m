@@ -1,4 +1,4 @@
-classdef init < com & Stand.config
+classdef init < BA_Utils.ScanControl.Utils.CANControl.com & BA_Utils.ScanControl.Utils.CANControl.Stand.config
 %Stand.init controls the Stand Axiovert 200:Stand
     properties (Dependent)
         reflector;
@@ -12,7 +12,7 @@ classdef init < com & Stand.config
     methods
         %% Constructor
         function obj = init(serial)
-            obj@com(serial);
+            obj@BA_Utils.ScanControl.Utils.CANControl.com(serial);
         end
         
         %% Available methods

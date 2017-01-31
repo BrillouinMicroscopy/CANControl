@@ -1,4 +1,4 @@
-classdef init < com & Focus.config
+classdef init < BA_Utils.ScanControl.Utils.CANControl.com & BA_Utils.ScanControl.Utils.CANControl.Focus.config
 %Focus.init controls the Stand Axiovert 200:Focus
     properties (Constant)
         umperinc = 0.025;   % [µm per increment] constant for converting
@@ -13,7 +13,7 @@ classdef init < com & Focus.config
     methods
         %% Constructor
         function obj = init(serial)
-            obj@com(serial); 
+            obj@BA_Utils.ScanControl.Utils.CANControl.com(serial); 
         end
         
         %% Available methods
